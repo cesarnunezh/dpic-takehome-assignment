@@ -11,7 +11,7 @@ dpic_takehome/
     └── README.md           # Logic of the workflow
 ├── dashboard/
     ├── app.py              # Dashboard layout
-    └── figures.py          # 
+    └── figures.py          # Contains functions to create charts
 ├── data_pipeline/          
     ├── cleaning.py         # Cleans the raw data
     ├── data_to_db.py       # Creates a db and inserts clean data into the db
