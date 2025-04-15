@@ -62,9 +62,9 @@ about_card = dcc.Markdown(
 data_card = dcc.Markdown(
     """
     This dashboard uses mainly two sources of data:
-    - [Enrollments Data](https://github.com/zenbuffy/irishGenderPayGap/tree/main): Contains enrollment numbers for Industrial
+    - [Enrollments Data](https://github.com/cesarnunezh/dpic-takehome-assignment/tree/main/data/raw): Contains enrollment numbers for Industrial
     Training Institutes (ITIs) by district and year.
-    - [Grievances Data](https://github.com/zenbuffy/irishGenderPayGap/tree/main): Contains citizen complaints related to
+    - [Grievances Data](https://github.com/cesarnunezh/dpic-takehome-assignment/tree/main/data/raw): Contains citizen complaints related to
     vocational education.
 
      This site was created for a Take-Home Test application for a Data Science/Engineering Intern position.

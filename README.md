@@ -62,32 +62,31 @@ This Apache Airflow DAG mimics the weekly automation for the take home assignmen
 3. `load_db_data`: Inserts cleaned data into the database.
 4. `send_email_summary`: Emails a summary report from the weekly automation.
 
+
 ## **Part 3: Visualization & Insights**
 
-### 📍 Tool:
-- [Plotly Dash] or [Streamlit] (see `dashboard/`)
+For the visualization, I used Dash for dashboard layout and Altair for the creation of charts.  
 
 ### Features:
-- Line/bar charts of district enrollments
-- Grievance submission patterns
-- Mismatch highlights: high enrollments vs low grievance rates
-
-### 📝 Insight Brief:
-See `insight_brief.md` or `insight_brief.pdf` for a summary of 3 actionable insights derived from the data.
+- Summary of Odisha's enrollment and grievances statistics.
+- Analyzing missmatch between enrollment and grievances on district level.
+- Interactive summary statistics for enrollment and grievances on district level.
 
 
 ## 🛠️ Setup Instructions
 
-1. Clone the repo:
-```bash
-git clone https://github.com/your-username/dpic-takehome-assignment.git
+1. [Install UV](https://docs.astral.sh/uv/getting-started/installation/)
+
+2. Clone the repo:
+```
+git clone git@github.com:cesarnunezh/dpic-takehome-assignment.git
 cd dpic-takehome-assignment
 ```
-2. Clone the repo:
-```bash
-
+3. Synchronize the virtual environment:
 ```
-3. Run the project as a module:
+uv sync
+```
+4. Run the project as a module:
 ```
 uv run -m dpic_takehome
 ```
