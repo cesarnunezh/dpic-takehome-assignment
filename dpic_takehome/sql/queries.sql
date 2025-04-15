@@ -9,14 +9,14 @@ FROM grievances as g
 GROUP BY g.year, g.cat_grivance;
 
 -- 3. Grievances per 1000 enrolled students by district
-WITH enrolment_by_year AS (SELECT i.year, i.did, i.district, SUM(i.enrolled) as enrollment
+WITH enrollment_by_year AS (SELECT i.year, i.did, i.district, SUM(i.enrolled) as enrollment
                            FROM iti_enrollments as i
                            GROUP BY i.year, i.did, i.district),
 grivances_by_year AS (SELECT g.year, g.did, g.district_name, COUNT(g.grievance_text) as num_grievances
                       FROM grievances as g
                       GROUP BY g.year, g.did, g.district_name)
-SELECT e.year, e.did, e.district, (g.num_grievances / e.enrollment)*1000 as grievances_pc
-FROM enrolment_by_year as e
+SELECT e.year, e.did, e.district, g.num_grievances,  e.enrollment, (g.num_grievances / e.enrollment)*1000 as grievances_pc
+FROM enrollment_by_year as e
 JOIN grivances_by_year as g ON e.did == g.did AND e.year == g.year
 ORDER BY e.year ASC, grievances_pc DESC;
 
@@ -43,7 +43,7 @@ SELECT g.year, g.did, g.district_name, g.cat_grivance, COUNT(g.cat_grivance) as 
 FROM grievances as g
 GROUP BY g.year, g.did, g.district_name, g.cat_grivance
 
--- 6. Enrolment by program and district
+-- 6. Enrollment by program and district
 SELECT i.year, i.district, i.program, SUM(i.enrolled) as enrollment
 FROM iti_enrollments as i
 GROUP BY i.year, i.district, i.program

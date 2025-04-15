@@ -20,10 +20,8 @@ def run_queries(db_path = Path('data/dpic.db'), query_file = Path('dpic_takehome
 
     result_tables = {}
     for table, query in queries.items():
-        print(table)    
         df = pd.read_sql_query(query, con)
         result_tables[table] = df
-        print(df)
     con.close()
     return result_tables
 

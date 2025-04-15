@@ -1,5 +1,5 @@
 import pandas as pd
-import cleaning 
+from ..data_pipeline import cleaning
 import sqlite3
 from pathlib import Path
 import os

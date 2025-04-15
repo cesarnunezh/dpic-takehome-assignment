@@ -87,16 +87,16 @@ def categorize_grievances(df: pd.DataFrame, column: str) -> pd.DataFrame:
     Returns: dataframe with the new categorization column
     '''
     dict_categorize = {
-        'Hostel conditions are very poor, water supply is irregular.' : 'Poor water supply',
-        'Stipend not credited for the last three months.' : 'Stipend not credited',
-        'Students are asked to arrange their own materials for practice.' : 'Students arrange own materials',
-        'Trainer has not come to the institute for the past two weeks.' : 'Trainer absence',
-        'Internet not working in the computer lab for over a month.' : 'Internet not working',
-        'Electricity is not available during class hours.' : 'Lack of electricity',
-        'No practical classes being conducted for welding program.' : 'No practical classes',
+        'Hostel conditions are very poor, water supply is irregular.' : 'Utilities',
+        'Stipend not credited for the last three months.' : 'Other',
+        'Students are asked to arrange their own materials for practice.' : 'Equipment and materials',
+        'Trainer has not come to the institute for the past two weeks.' : 'Instructor issues',
+        'Internet not working in the computer lab for over a month.' : 'Utilities',
+        'Electricity is not available during class hours.' : 'Utilities',
+        'No practical classes being conducted for welding program.' : 'Other',
         'Grievance was registered last month, no action yet.' : 'No action, past month',
-        'Lab equipment is broken and no replacement has been provided.' : 'Broken lab equipment',
-        'Only one instructor for three different trades.' : 'Unique instructor'
+        'Lab equipment is broken and no replacement has been provided.' : 'Equipment and materials',
+        'Only one instructor for three different trades.' : 'Instructor issues'
     }
 
     df.loc[:, f'cat_{column}'] = df.loc[:,column].replace(dict_categorize)
@@ -187,11 +187,10 @@ def main():
     path_clean = Path('data/clean')
     if not path_clean.exists():
         os.mkdir(path_clean)
-
-    df_g.to_csv(Path('data/clean/grievances.csv'), index = False)
-    df_i.to_csv(Path('data/clean/iti_enrollments.csv'), index = False)
-    districts.to_csv(Path('data/clean/districts.csv'), index = False)
-    itis.to_csv(Path('data/clean/itis.csv'), index = False)
+        df_g.to_csv(Path('data/clean/grievances.csv'), index = False)
+        df_i.to_csv(Path('data/clean/iti_enrollments.csv'), index = False)
+        districts.to_csv(Path('data/clean/districts.csv'), index = False)
+        itis.to_csv(Path('data/clean/itis.csv'), index = False)
 
 if __name__ == "__main__":
     main()
