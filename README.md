@@ -1,8 +1,9 @@
 # DPIC Take Home Assignment - César Núñez
 
-This project presents a full data pipeline and analysis workflow for monitoring vocational training programs in Odisha, using ITI enrollments and citizen grievances.
+This repository contains a complete data pipeline, analysis and visualization on enrollment and citizen grievances in Odisha, India. It uses two main sources: enrollment data from Industrial Training Institutes  and citizen complaints related to vocational education.
 
-## 📦 Project Structure
+
+## Project Structure
 ```
 dpic_takehome/ 
 ├── air_flow_automation/
@@ -10,7 +11,7 @@ dpic_takehome/
     └── README.md           # Logic of the workflow
 ├── dashboard/
     ├── app.py              # Dashboard layout
-    └── figures.py          # 
+    └── figures.py          # Contains functions to create charts
 ├── data_pipeline/          
     ├── cleaning.py         # Cleans the raw data
     ├── data_to_db.py       # Creates a db and inserts clean data into the db
@@ -73,7 +74,7 @@ For the visualization, I used Dash for dashboard layout and Altair for the creat
 - Interactive summary statistics for enrollment and grievances on district level.
 
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 1. [Install UV](https://docs.astral.sh/uv/getting-started/installation/)
 
